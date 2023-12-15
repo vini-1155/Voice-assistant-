@@ -12,9 +12,9 @@ engine.setProperty('voice', voices[0].id)
 def ai(userquery):
     try:
         client = OpenAI(
-            api_key="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")
+            api_key="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")
         response = client.chat.completions.create(
-            model="gpt-3.5-turbo-1106",
+            model="gpt-3.5-turbo-16k",
             messages=[
                 {
                     "role": "user",
