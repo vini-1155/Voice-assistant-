@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text to Speech Converter</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="app-container">
+            <div class="headings-container">
+                <h1>
+                    Text to Speech Converter Using
+                    HTML, CSS, and JavaScript.
+                </h1>
+                
+
+    <script>
+        function speak(text) {
+            const speechSynth = window.speechSynthesis;
+            const error = document.querySelector('.error-para');
+            if (!speechSynth.speaking) {
+                const newUtter =
+                    new SpeechSynthesisUtterance(text);
+                speechSynth.speak(newUtter);
+            }
+            setTimeout(() => {
+            }, 5000);
+        }
+
+        speak("{{ result }}")
+    </script>
+    <button onclick='speak("{{ result }}")'>Speak</button>
+</body>
+
+</html>
