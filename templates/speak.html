@@ -5,6 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Text to Speech Converter</title>
+    <script src="https://kit.fontawesome.com/c487d309ba.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
@@ -12,27 +16,31 @@
         <div class="app-container">
             <div class="headings-container">
                 <h1>
-                    Text to Speech Converter Using
-                    HTML, CSS, and JavaScript.
+                    Aplha: Health-based AI
                 </h1>
-                
-
+            
+                <h6>Click again to listen</h6>
     <script>
         function speak(text) {
             const speechSynth = window.speechSynthesis;
             const error = document.querySelector('.error-para');
+            // console.log("speak.html"+text);
             if (!speechSynth.speaking) {
                 const newUtter =
                     new SpeechSynthesisUtterance(text);
+                    newUtter.lang = 'te';
                 speechSynth.speak(newUtter);
             }
-            setTimeout(() => {
-            }, 5000);
+            // setTimeout(() => {
+            // }, 5000);
         }
+        
 
         speak("{{ result }}")
+        
     </script>
-    <button onclick='speak("{{ result }}")'>Speak</button>
+    
+    <button class='btn btn-outline-secondary btn-lg' onclick='speak("{{ result }}")'>Speak</button>
 </body>
 
 </html>

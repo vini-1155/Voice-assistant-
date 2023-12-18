@@ -1,5 +1,5 @@
 import openai
-# from config import apikey
+from config import API
 from openai import OpenAI
 import speech_recognition as sr
 import os
@@ -7,14 +7,14 @@ import pyttsx3
 
 engine = pyttsx3.init("sapi5")
 voices = engine.getProperty('voices')
-engine.setProperty('voice', voices[0].id)
+engine.setProperty('voice', voices[3].id)
 
 def ai(userquery):
     try:
         client = OpenAI(
-            api_key="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")
+            api_key=API)
         response = client.chat.completions.create(
-            model="gpt-3.5-turbo-16k",
+            model="gpt-3.5-turbo-1106",
             messages=[
                 {
                     "role": "user",
