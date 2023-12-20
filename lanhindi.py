@@ -25,7 +25,7 @@ r = sr.Recognizer()
 def ai(userquery):
     try:
         client = OpenAI(
-            api_key="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")
+            api_key="")
         response = client.chat.completions.create(
             model="gpt-3.5-turbo-1106",
             messages=[

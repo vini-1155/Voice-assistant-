@@ -5,20 +5,22 @@ app = Flask(__name__)
 
 @app.route('/',methods=['GET','POST'])
 def home():
-    if request.method == 'POST':
-        query = request.form['s']
-        # lang = request.form['language']
-        # print(lang)
-        print('user asked: ',query)
-        result = lanhindi.ai(query)
-        result = result.replace('\n',' ')
-        results = []
-        results.append(result)
-
-        return render_template('speak.html',result=result)
-    return render_template('index.html')
+    try:
+        if request.method == 'POST':
+            query = request.form['s']
+            lang = request.form['language']
+            print(lang)
+            print('user asked: ',query)
+            result = lanhindi.ai(query)
+            result = result.replace('\n',' ')
+            results = []
+            results.append(result)
+            results.append(lang)
+            print(results)
+            return render_template('speak.html',result=results)
+        return render_template('index.html')
+    except Exception as e:
+        print(e)
 
 if __name__ == "__main__":
     app.run()
-
-

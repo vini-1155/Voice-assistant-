@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://kit.fontawesome.com/c487d309ba.js" crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <!-- <link rel="stylesheet" href="styles.css"> -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+    integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+    crossorigin="anonymous"></script>
+  <style>
+    
+.speech {
+  border: 1px solid #ddd;
+  padding: 0;
+  margin: 0;
+}
+/* body{
+  background-color: rgb(247, 247, 232);
+} */
+.speech input {
+  border: 0;
+  width: 240px;
+  display: inline-block;
+  height: 30px;
+  font-size: 14px;
+}
+
+.speech img {
+  float: right;
+  width: 40px;
+}
+
+
+.inputs{
+  padding-top: 100px;
+}
+
+.text{
+  height: 30%;
+}
+
+.mic{
+  padding: 3% 15% 3% ;
+  height: 200px;
+  width: 200px;
+}
+
+h3, h2, h1{
+  padding: 5% 5% 5% 10%;
+}
+
+
+.content{
+  /* background-color: #836de78a; */
+  height: 800px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.021),rgba(0, 0, 0, 0.041)),url(https://th.bing.com/th/id/OIP.j7DJZOer4juCSg-29LfjzgHaE7?w=https://img.freepik.com/premium-photo/red-apple-table-with-sunset-background_865967-575777.jpg&h=417&rs=1&pid=ImgDetMain);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.hdng{
+  font-size: 100px;
+  color: rgb(10, 10, 44);
+}
+
+.desp{
+  font-size: 30px;
+  color: rgb(10, 10, 44);
+}
+
+.hdngs{
+  font-size: 60px;
+  color: rgb(10, 10, 44);
+}
+
+.langcontainer{
+  height: 400px;
+  background-color: rgb(247, 247, 232);
+}
+
+.formip{
+   background-color: rgb(245, 242, 242); 
+} 
+
+p{
+  font-size: 1.2rem;
+  line-height: 2;
+}
+
+.aboutus{
+  background-color: rgb(247, 247, 232);
+  height: 500px;
+}
+
+.contactus{
+  background-color: rgb(179, 173, 173);
+  padding: 20px 15px 15px 20px;
+}
+
+.footer{
+  padding: 10px 40px 0px 80px ;
+  height: 80px;
+}
+    .speech {
+      border: 1px solid #ddd;
+      padding: 0;
+      margin: 0;
+    }
+
+    .speech input {
+      border: 0;
+      width: 240px;
+      display: inline-block;
+      height: 30px;
+      font-size: 14px;
+    }
+
+    .speech img {
+      float: right;
+      width: 40px;
+    }
+
+
+    .inputs {
+      padding-top: 100px;
+    }
+
+    .text {
+      height: 30%;
+    }
+
+    .mic {
+      padding: 3% 15% 3%;
+      height: 200px;
+      width: 200px;
+    }
+
+    h3 {
+      padding: 3% 15%;
+    }
+  </style>
+</head>
+
+<body>
+  <header id="home">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Alpha</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#home">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contact</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" aria-disabled="true">About Us</a>
+            </li>
+
+          </ul>
+
+          <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-secondary" type="submit">Search</button>
+          </form>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <center>
+    <div class="content">
+      <h2 class="hdng">Transform Your Health with</h2>
+      <p class="desp">Get instant assistance for your health needs with our voice assistant technology.</p>
+    </div>
+
+    <div class="langcontainer">
+    <h2 class="hdngs">Choose Your Language</h2>
+      <button onclick="handleButtonClick('kannada')" class='btn btn-outline-secondary btn-lg'>ಕನ್ನಡ</button>
+      <button onclick="handleButtonClick('english')" class='btn btn-outline-secondary btn-lg'>ENGLISH</button>
+      <button onclick="handleButtonClick('hindi')" class='btn btn-outline-secondary btn-lg'>हिंदी</button>
+      <button onclick="handleButtonClick('telugu')" class='btn btn-outline-secondary btn-lg'>తెలుగు</button>
+      <button onclick="handleButtonClick('malyalam')" class='btn btn-outline-secondary btn-lg'>മലയാളം</button>
+      <button onclick="handleButtonClick('tamil')" class='btn btn-outline-secondary btn-lg'>தமிழ்</button>
+      <button onclick="handleButtonClick('bengali')" class='btn btn-outline-secondary btn-lg'>বাঙ্গালি</button>
+      <button onclick="handleButtonClick('gujarati')" class='btn btn-outline-secondary btn-lg'>ગુજરાતી</button>
+      <button onclick="handleButtonClick('marathi')" class='btn btn-outline-secondary btn-lg'>मराठी</button>
+      <button onclick="handleButtonClick('urdu')" class='btn btn-outline-secondary btn-lg'>اردو</button>
+    </div>
+
+
+    <div class="formip">
+      <div class="inputs col-lg-12">
+        <form id="labnol" method="post" action="/">
+          <div class="speech col-lg-12 ">
+            <input type="hidden" name="language" id="language">
+            <textarea type="text" class="testarea col-lg-12 col-sm-12" name="s" id="transcript"
+              placeholder="Say Something" rows="5" cols="10"></textarea>
+            <!-- <img onclick="startDictation()" width="30px" src="#" /> -->
+          </div>
+          <div class="mic col-lg-12">
+            <button type="button" class=" btn  btn-outline-secondary btn-lg" value="ask" onclick="startDictation()"><i
+                class="fa-solid fa-microphone"></i> </button>
+              </div>
+              <!-- <p>Click the mic</p> -->
+        </form>
+      </div>
+    </div>
+
+    <div class="aboutus">
+      <h2 class="hdngs">About us</h2>
+      <p>Welcome to Alpha, your trusted provider of health-based voice assistant solutions. We are located in Bangalore
+        Division, KA, and are committed to revolutionizing the way people interact with technology to improve their
+        health and well-being.
+
+        With our cutting-edge voice assistant technology, we aim to simplify and enhance the healthcare experience for
+        individuals and healthcare professionals alike. Our team of experts is dedicated to developing innovative
+        solutions that empower users to access accurate health information, manage their health conditions, and make
+        informed decisions.</p>
+    </div>
+
+    
+    <div class="contactus row">
+      <div class="col-sm-6 col-lg-6">
+        <h2>Contact Us Today</h2>
+        <p>Fill out the form below to get in touch with us. We are here to answer any questions you may have and provide the assistance you need for your health-based voice assistant.</p>
+      </div>
+      <div class="col-sm-6 col-lg-6">
+
+      
+      <form class="row g-3 needs-validation" method="POST" action="mailto: vinaymdevang555@gmail.com"novalidate>
+        <div class="col-md-4">
+          <label for="validationCustom01" class="form-label">First name</label>
+          <input type="text" class="form-control" id="validationCustom01" value="Alpha" required>
+          <div class="valid-feedback">
+            Looks good!
+          </div>
+        </div>
+        <div class="col-md-4">
+          <label for="validationCustom02" class="form-label">Middle name</label>
+          <input type="text" class="form-control" id="validationCustom02" value="3.0">
+          <div class="valid-feedback">
+            Looks good!
+          </div>
+        </div>
+        <div class="col-md-4">
+          <label for="validationCustomUsername" class="form-label">Last name</label>
+          <div class="input-group has-validation">
+            <input type="text" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
+            <div class="invalid-feedback">
+              Please choose a username.
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <label for="validationCustom03" class="form-label">Query</label>
+          <input type="text" class="form-control" id="validationCustom03" required>
+          <div class="invalid-feedback">
+            Please raise a question.
+          </div>
+        </div>
+        <div class="col-md-3">
+          <label for="validationCustom04" class="form-label">State</label>
+          <select class="form-select" id="validationCustom04" required>
+            <option selected  value="">Karnataka</option>
+            <option selected  value="">Andra-pradesh</option>
+            <option selected  value="">Tamil Nadu</option>
+            <option selected  value="">Kerala</option>
+            <option selected  value="">Maharastra</option>
+            <option selected  value="">Madyapradesh</option>
+            <option selected  value="">Others</option>
+            <option>...</option>
+          </select>
+          <div class="invalid-feedback">
+            Please select a valid state.
+          </div>
+        </div>
+        <div class="col-md-3">
+          <label for="validationCustom05" class="form-label">Zip</label>
+          <input type="text" class="form-control" id="validationCustom05" required>
+          <div class="invalid-feedback">
+            Please provide a valid zip.
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+            <label class="form-check-label" for="invalidCheck">
+              Agree to terms and conditions
+            </label>
+            <div class="invalid-feedback">
+              You must agree before submitting.
+            </div>
+          </div>
+        </div>
+        <div class="col-12">
+          <button class="btn btn-primary" type="submit">Submit form</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="footer">
+    <h4>Alpha</h4>
+    <p>Health-Based Voice assistant</p>
+    <address>#123, Banglore, Karnataka <br>India</address>
+    
+  </div>
+</center>
+
+  
+  <script type="text/javascript">
+
+(() => {
+  'use strict'
+
+  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+  const forms = document.querySelectorAll('.needs-validation')
+
+  // Loop over them and prevent submission
+  Array.from(forms).forEach(form => {
+    form.addEventListener('submit', event => {
+      if (!form.checkValidity()) {
+        event.preventDefault()
+        event.stopPropagation()
+      }
+
+      form.classList.add('was-validated')
+    }, false)
+  })
+})()
+    let langCode = 'en'
+    function handleButtonClick(buttonValue) {
+
+      const obj = { 'kannada': 'kn', 'english': 'en', 'hindi': 'hi', 'telugu': 'te', 'malyalam': 'ml', 'tamil': 'ta', 'bengali': 'bn', 'gujarati': 'gu', 'marathi': 'mr', 'urdu': 'ur' }
+      // You can perform any action with the button value here
+      // const BV =  buttonValue
+      langCode = obj[buttonValue]
+      document.getElementById("language").value = langCode;
+      // alert("Button clicked with value: " + langCode);
+
+      // Example: Sending the value to another function
+      // processButtonValue(buttonValue);
+    }
+    // function processButtonValue(value) {
+    //     // This is a placeholder function, you can replace it with your logic
+    //     alert("Processing button value: " + value);
+    //     // Add your logic here to handle the button value as needed
+    // }
+    function startDictation() {
+      if (window.hasOwnProperty('webkitSpeechRecognition')) {
+        var recognition = new webkitSpeechRecognition();
+
+        let resultlangcode = langCode.concat('-IN');
+        recognition.continuous = false;
+        recognition.interimResults = false;
+        recognition.lang = resultlangcode;
+        recognition.start();
+
+        recognition.onresult = function (e) {
+          document.getElementById('transcript').value = e.results[0][0].transcript;
+          recognition.stop();
+          document.getElementById('labnol').submit();
+        };
+        recognition.onerror = function (e) {
+          recognition.stop();
+        };
+      }
+    }
+  </script>
+</body>
+
+</html>

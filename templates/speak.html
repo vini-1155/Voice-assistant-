@@ -9,17 +9,100 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
       integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    /* background-color: #3498db; */
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+#intro, #features, #how-it-works {
+    padding: 40px 0;
+    background-color: #f4f4f4;
+}
+
+#features ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#features li {
+    margin-bottom: 10px;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+.b{
+    padding: 30px 100px 30px 100px;
+}
+    </style>
 </head>
 
 <body>
-    <div class="container">
-        <div class="app-container">
-            <div class="headings-container">
-                <h1>
-                    Aplha: Health-based AI
-                </h1>
-            
-                <h6>Click again to listen</h6>
+    <header id="home"> </header>
+    <section id="intro">
+        <div class="container">
+            <h2>Welcome to our Health Voice Assistant</h2>
+            <p>Empowering you to manage your health using the power of voice.</p>
+        </div>
+    </section>
+    <center>
+
+        
+        <div class="b result">
+            <button class='b btn btn-outline-secondary btn-lg' onclick='speak("{{ result }}")'>Speak</button>
+            <h6 class="b">Click here to listen again</h6>
+        </div>
+    </center>
+
+    <section id="features" class="section">
+        <div class="container">
+            <h2>Key Features</h2>
+            <div class="feature">
+                <h3>Voice-Activated Information Retrieval</h3>
+                <p>
+                    Access a wealth of health information using natural language voice commands. Ask questions about various health topics, symptoms, and conditions to receive accurate and up-to-date information.
+                </p>
+            </div>
+
+            <div class="feature">
+                <h3>Personalized Health Recommendations</h3>
+                <p>
+                    Receive personalized health recommendations based on your medical history and preferences. Our system analyzes your health data to offer tailored advice for maintaining a healthy lifestyle.
+                </p>
+            </div>
+
+            <div class="feature">
+                <h3>Language Options</h3>
+                <p>
+                    Enjoy a personalized experience by choosing your preferred language. The Health Voice Assistant supports multiple languages, ensuring accessibility for a diverse audience. Select from a range of language options to interact with the assistant in a way that suits you best.
+                </p>
+            </div>
+
+            <!-- Add more features as needed -->
+
+        </div>
+    </section>
+
     <script>
         function speak(text) {
             const speechSynth = window.speechSynthesis;
@@ -28,19 +111,25 @@
             if (!speechSynth.speaking) {
                 const newUtter =
                     new SpeechSynthesisUtterance(text);
-                    newUtter.lang = 'te';
+                    newUtter.lang = "{{ result[1] }}";
                 speechSynth.speak(newUtter);
             }
             // setTimeout(() => {
             // }, 5000);
         }
         
-
-        speak("{{ result }}")
+        speak("{{ result[0] }}");
         
     </script>
-    
-    <button class='btn btn-outline-secondary btn-lg' onclick='speak("{{ result }}")'>Speak</button>
+    <button class='btn btn-outline-secondary btn-lg' onclick='speak("{{ result[0] }}")'>Speak</button>
+        
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Alpha. All rights reserved.</p>
+        </div>
+    </footer>
+
 </body>
 
 </html>
