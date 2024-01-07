@@ -35,7 +35,6 @@ pydantic==2.5.2
 pydantic_core==2.14.5
 pypiwin32==223
 pyttsx3==2.90
-pywin32==306
 requests==2.31.0
 rfc3986==1.5.0
 setuptools==69.0.2
