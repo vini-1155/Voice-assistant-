@@ -1,11 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'layout.html'%}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title> User Manual</title>
+{% block body%}
+<title> User Manual</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -39,7 +35,7 @@
             color: #fff;
             text-align: center;
             padding: 10px 0;
-            position: fixed;
+            /* position: fixed; */
             bottom: 0;
             width: 100%;
         }
@@ -172,12 +168,4 @@
             <p>Review the privacy policy to learn how your data is collected, used, and protected.</p>
         </div>
 
-        <footer>
-            <div class="container">
-                <p>&copy; 2023 Alpha. All rights reserved.</p>
-            </div>
-        </footer>
-
-</body>
-
-</html>
+        {% endblock%}

@@ -5,7 +5,6 @@ app = Flask(__name__)
 
 @app.route('/',methods=['GET','POST'])
 def home():
-    try:
         if request.method == 'POST':
             query = request.form['s']
             lang = request.form['language']
@@ -19,8 +18,10 @@ def home():
             print(results)
             return render_template('speak.html',result=results)
         return render_template('index.html')
-    except Exception as e:
-        print(e)
+
+@app.route('/usermanual')
+def usermanual():
+    return render_template('usermanual.html')
 
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True)
