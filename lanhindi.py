@@ -3,10 +3,10 @@ from openai import OpenAI
 import speech_recognition as sr
 import os
 
-key = os.environ.get('KEY')
+api_key = os.environ.get('KEY')
 def ai(userquery):
     try:
-        client = OpenAI(api_key=key)
+        client = OpenAI(api_key=api_key)
         response = client.chat.completions.create(
             model="gpt-3.5-turbo-1106",
             messages=[
