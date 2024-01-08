@@ -3,28 +3,12 @@ import openai
 from openai import OpenAI
 import speech_recognition as sr
 
-engine = pyttsx3.init()
-voices = engine.getProperty('voices')
-
-def say(text):
-    engine.setProperty('voice', voices[3].id)
-    engine.say(text)
-    engine.runAndWait()
-
-def speak(text):
-    engine = pyttsx3.init()
-    voices = engine.getProperty('voices')
-    engine.setProperty('voice', voices[1].id)
-    engine.setProperty('rate', 180)
-    engine.say(text)
-    engine.runAndWait()
-
-r = sr.Recognizer()
+key_value = os.environ.get('KEY')
 
 def ai(userquery):
     try:
         client = OpenAI(
-            api_key="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")
+            api_key=key_value)
         response = client.chat.completions.create(
             model="gpt-3.5-turbo-1106",
             messages=[
