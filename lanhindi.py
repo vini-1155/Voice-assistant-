@@ -2,6 +2,7 @@ import pyttsx3
 import openai
 from openai import OpenAI
 import speech_recognition as sr
+import os
 
 engine = pyttsx3.init()
 voices = engine.getProperty('voices')
@@ -24,7 +25,8 @@ r = sr.Recognizer()
 def ai(userquery):
     try:
         client = OpenAI(
-            api_key="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")
+            key = os.environ.get('KEY')
+            api_key=key)
         response = client.chat.completions.create(
             model="gpt-3.5-turbo-1106",
             messages=[
