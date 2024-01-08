@@ -1,35 +1,20 @@
-import pyttsx3
+
 import openai
 from openai import OpenAI
 import speech_recognition as sr
+import os
 
-engine = pyttsx3.init()
-voices = engine.getProperty('voices')
-
-def say(text):
-    engine.setProperty('voice', voices[3].id)
-    engine.say(text)
-    engine.runAndWait()
-
-def speak(text):
-    engine = pyttsx3.init()
-    voices = engine.getProperty('voices')
-    engine.setProperty('voice', voices[1].id)
-    engine.setProperty('rate', 180)
-    engine.say(text)
-    engine.runAndWait()
-
-r = sr.Recognizer()
 
 def ai(userquery):
     try:
         client = OpenAI(
-            api_key="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")
+            key_value = os.environ.get('KEY')
+            api_key=key_value)
         response = client.chat.completions.create(
             model="gpt-3.5-turbo-1106",
             messages=[
                 {
-                    "role": "user",
+                    "role": "Health_based Voice Assistant",
                     "content": userquery
                 }
             ],
@@ -45,7 +30,7 @@ def ai(userquery):
             choice.message.content for choice in response.choices
         ]
         res = ''.join(generated_texts)
-        print("ai",res)
+        print("Alpha : ",res)
         return res
 
     except Exception as e:
