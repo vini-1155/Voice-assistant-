@@ -11,7 +11,7 @@ def ai(userquery):
             model="gpt-3.5-turbo-1106",
             messages=[
                 {
-                    "role": "Health-Based Voice Assistant",
+                    "role": "user",
                     "content": userquery
                 }
             ],
