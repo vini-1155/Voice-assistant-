@@ -6,8 +6,8 @@ import os
 def ai(userquery):
     try:
          SECRET = os.environ['KEY']
-        client = OpenAI(api_key=SECRET)
-        response = client.chat.completions.create(
+         client = OpenAI(api_key=SECRET)
+         response = client.chat.completions.create(
             model="gpt-3.5-turbo-1106",
             messages=[
                 {
