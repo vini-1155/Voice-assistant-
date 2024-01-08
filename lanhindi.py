@@ -1,11 +1,13 @@
 import openai
 from openai import OpenAI
 import speech_recognition as sr
+import os
 
 def ai(userquery):
     try:
+         SECRET = os.environ['KEY']
         client = OpenAI(
-            api_key="")
+            api_key=SECRET)
         response = client.chat.completions.create(
             model="gpt-3.5-turbo-1106",
             messages=[
